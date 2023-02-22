@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 0.69444444444444vw;
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  text-rendering: auto;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: auto;
+  margin: 0;
+  padding: 0;
+  background-color: #FFDCB4;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+input,
+textarea {
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button,
+input,
+a,
+textarea {
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: inherit;
+}
+
+button {
+  border: none;
+  color: inherit;
+  font:inherit;
+  text-align: inherit;
+  padding: 0;
+  background-color: inherit;
+  text-rendering: auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.container {
+	padding-left: 20rem;
+	padding-right: 20rem;
+}
+
+.header {
+	padding-top: 3rem;
+	padding-bottom: 5rem;
+}
+
+.todo-control {
+	position: relative;
+}
+
+.todo-control:hover .header-input {
+	box-shadow: 0 0 1.5rem rgba(97, 52, 0, .3);
+}
+
+.header-input {
+	width: 100%;
+	height: 5rem;
+	padding: 1rem 6rem;
+	font-size: 2rem;
+	border-radius: 5rem;
+	background-color: #FFFFFF;
+	box-shadow: 0 .5rem 1rem rgba(97, 52, 0, .75);
+	transition: all .3s;
+}
+
+.header-button {
+	position: absolute;
+	top: 0;
+	right: .25rem;
+	width: 5rem;
+	height: 5rem;
+	opacity: .7;
+	transition: all .3s;
+}
+
+.header-button:hover {
+	opacity: 1;
+}
+
+.header-button > img {
+	width: 100%;
+	height: 100%;
+}
+
+.list-title {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title {
+	display: block;
+	width: 48%;
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 2rem;
+}
+
+.todo-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.todo {
+	width: 48%;
+}
+
+.todo-item {
+	position: relative;
+	/*width: 30rem;*/
+	height: 5rem;
+	padding: 1.5rem 12rem 1.5rem 3rem;
+	font-size: 1.8rem;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border-radius: 5rem;
+	box-shadow: 0 .5rem 1rem rgba(97, 52, 0, .75);
+	background-color: #FFFFFF;
+	transition: all .5s;
+}
+
+.todo-item:not(:last-child) {
+	margin-bottom: 1.5rem;
+}
+
+.todo-item:hover {
+	/*width: 100%;*/
+	box-shadow: 0 0 1.5rem rgba(97, 52, 0, .3);
+}
+
+.todo-item:hover .todo-buttons {
+	/*opacity: 1;*/
+}
+
+.todo-buttons {
+	position: absolute;
+	top: 50%;
+	right: .4rem;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/*opacity: 0;*/
+	transition: all .5s;
+}
+
+.todo-remove {
+	width: 4.3rem;
+	height: 4.3rem;
+	margin-right: .7rem;
+	opacity: .7;
+	transition: all .3s;
+}
+
+.todo-remove > img {
+	width: 100%;
+	height: 100%;
+}
+
+.todo-complete {
+	width: 4.3rem;
+	height: 4.3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	opacity: .7;
+	transition: all .3s;
+}
+
+.todo-complete > img {
+	width: 2rem;
+	height: auto;
+}
+
+.todo-remove:hover {
+	opacity: 1;
+}
+
+.todo-complete:hover {
+	opacity: 1;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style/style.css">
+	<script defer src="js/script.js"></script>
+
+	<title>TodoList</title>
+</head>
+<body>
+
+	<header class="container header">
+		<form class="todo-control">
+			<label>
+				<input class="header-input" type="text" placeholder="Какие планы?">
+			</label>
+
+			<button class="header-button" id="add" type="submit">
+				<img src="img/plus.svg" alt="add">
+			</button>
+		</form>
+	</header>
+
+	<div class="container list-title">
+		<h3 class="title">Новые задачи</h3>
+
+		<h3 class="title">Выполненные задачи</h3>
+	</div>
+
+	<div class="container todo-container">
+		<ul class="todo todo-list" id="todo"></ul>
+
+		<ul class="todo todo-completed" id="completed"></ul>
+	</div>
+
+</body>
+</html>
