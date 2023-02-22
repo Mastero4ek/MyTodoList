@@ -48,9 +48,7 @@ const render = function () {
 		});
 
 		removeBtn.addEventListener('click', function(e) {
-			todoData.splice(item, 1);
-
-			li.remove();
+			todoData.splice(todoData.indexOf(item), 1);
 
 			render();
 
