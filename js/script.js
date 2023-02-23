@@ -26,7 +26,8 @@ const render = function () {
 		'</button>' +
 		'</div>';
 
-		const doneBtn = li.querySelector('.todo-complete'),
+		const todoBtns = li.querySelector('.todo-buttons'),
+			doneBtn = li.querySelector('.todo-complete'),
 			removeBtn = li.querySelector('.todo-remove');
 
 		if(item.completed) {
@@ -53,6 +54,18 @@ const render = function () {
 			render();
 
 			localStorage.setItem('todo', JSON.stringify(todoData));
+		});
+
+		li.addEventListener('mouseenter', () => {
+			todoBtns.style.animation = 'swipe-btns .5s cubic-bezier(.18,.89,.32,1.28)';
+			todoBtns.style.right = '4px';
+		});
+
+		li.addEventListener('mouseout', () => {
+			setTimeout(() => {
+				todoBtns.style.animation = 'none';
+				todoBtns.style.right = '-150px';
+			}, 3000);
 		});
 	});
 };

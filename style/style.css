@@ -187,7 +187,6 @@ input[type="number"] {
 
 .todo-item {
 	position: relative;
-	/*width: 30rem;*/
 	height: 5rem;
 	padding: 1.5rem 12rem 1.5rem 3rem;
 	font-size: 1.8rem;
@@ -206,24 +205,32 @@ input[type="number"] {
 }
 
 .todo-item:hover {
-	/*width: 100%;*/
 	box-shadow: 0 0 1.5rem rgba(97, 52, 0, .3);
-}
-
-.todo-item:hover .todo-buttons {
-	/*opacity: 1;*/
 }
 
 .todo-buttons {
 	position: absolute;
 	top: 50%;
-	right: .4rem;
+	right: -15rem;
 	transform: translateY(-50%);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	/*opacity: 0;*/
 	transition: all .5s;
+}
+
+@keyframes swipe-btns {
+	0% {
+		right: -15rem;
+	}
+
+	50% {
+		right: 3rem;
+	}
+
+	100% {
+		right: .4rem;
+	}
 }
 
 .todo-remove {
