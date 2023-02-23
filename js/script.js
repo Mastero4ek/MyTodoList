@@ -84,7 +84,7 @@ todoControl.addEventListener('submit', function(event) {
 	let headerInputEdit = headerInput.value[0].toUpperCase() + headerInput.value.slice(1);
 
 	const newTodo = {
-		text: headerInputEdit.trim(),
+		text: '&#8227; ' + headerInputEdit.trim(),
 		completed: false
 	};
 
