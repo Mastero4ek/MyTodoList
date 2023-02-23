@@ -63,15 +63,11 @@ const render = function () {
 		});
 
 		li.addEventListener('mouseenter', () => {
-			todoBtns.style.animation = 'swipe-btns .5s cubic-bezier(.18,.89,.32,1.28)';
 			todoBtns.style.right = '4px';
 		});
 
-		li.addEventListener('mouseout', () => {
-			setTimeout(() => {
-				todoBtns.style.animation = 'none';
-				todoBtns.style.right = '-150px';
-			}, 3000);
+		li.addEventListener('mouseleave', () => {
+			todoBtns.style.right = '-150px';
 		});
 	});
 };
