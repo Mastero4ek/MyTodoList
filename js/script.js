@@ -5,13 +5,7 @@ const todoControl = document.querySelector('.todo-control'),
 	todoList = document.querySelector('.todo-list'),
 	todoCompleted = document.querySelector('.todo-completed');
 
-let todoData;
-
-if(!localStorage.getItem('todo')) {
-	todoData = [];
-} else {
-	todoData = JSON.parse(localStorage.getItem('todo'));
-}
+const todoData = JSON.parse(localStorage.getItem('todo')) || [];
 
 const render = function () {
 	todoList.innerHTML = '';
@@ -22,15 +16,17 @@ const render = function () {
 
 		li.classList.add('todo-item');
 
-		li.innerHTML = '<span class="text-todo">' + item.text + '</span>' +
-		'<div class="todo-buttons">' +
-		'<button class="todo-remove">' +
-		'<img src="img/garbage.svg" alt="garbage">' +
-		'</button>' +
-		'<button class="todo-complete">' +
-		'<img src="img/check.svg" alt="check">' +
-		'</button>' +
-		'</div>';
+		li.innerHTML = `<span class="text-todo">${item.text}</span>
+
+						<div class="todo-buttons">
+							<button class="todo-remove">
+								<img src="img/garbage.svg" alt="garbage">
+							</button>
+
+							<button class="todo-complete">
+								<img src="img/check.svg" alt="check">
+							</button>
+						</div>`;
 
 		const todoBtns = li.querySelector('.todo-buttons'),
 			doneBtn = li.querySelector('.todo-complete'),
@@ -63,11 +59,15 @@ const render = function () {
 		});
 
 		li.addEventListener('mouseenter', () => {
+			todoBtns.style.animation = 'swipe-btns .5s ease-in-out';
 			todoBtns.style.right = '4px';
 		});
 
 		li.addEventListener('mouseleave', () => {
-			todoBtns.style.right = '-150px';
+			setTimeout(() => {
+				todoBtns.style.animation = 'none';
+				todoBtns.style.right = '-150px';
+			}, 1000);
 		});
 	});
 };

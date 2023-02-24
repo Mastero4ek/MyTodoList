@@ -221,6 +221,20 @@ input[type="number"] {
 	transition: all .3s;
 }
 
+@keyframes swipe-btns {
+	0% {
+		right: -15rem;
+	}
+
+	75% {
+		right: 3rem;
+	}
+
+	100% {
+		right: -.4rem;
+	}
+}
+
 .todo-remove {
 	width: 4.3rem;
 	height: 4.3rem;
