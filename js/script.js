@@ -59,14 +59,22 @@ const render = function () {
 		});
 
 		li.addEventListener('mouseenter', () => {
-			todoBtns.style.animation = 'swipe-btns .5s ease-in-out';
-			todoBtns.style.right = '4px';
+			if(todoBtns.classList.contains('.todo-buttons-swipe')) return;
+
+			setTimeout(() => {
+				todoBtns.classList.add('todo-buttons-swipe');
+			}, 500);
+
+			const timer = setTimeout(() => {
+			    todoBtns.classList.add('todo-buttons-swipe');
+
+			    clearTimeout(timer);
+			}, 1000);
 		});
 
 		li.addEventListener('mouseleave', () => {
 			setTimeout(() => {
-				todoBtns.style.animation = 'none';
-				todoBtns.style.right = '-150px';
+				todoBtns.classList.remove('todo-buttons-swipe');
 			}, 1000);
 		});
 	});

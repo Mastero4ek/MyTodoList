@@ -221,6 +221,11 @@ input[type="number"] {
 	transition: all .3s;
 }
 
+.todo-buttons-swipe {
+	animation: swipe-btns .5s cubic-bezier(.25, .8, .25, 1);;
+	right: 4px;
+}
+
 @keyframes swipe-btns {
 	0% {
 		right: -15rem;
