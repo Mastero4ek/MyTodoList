@@ -58,24 +58,28 @@ const render = function () {
 			localStorage.setItem('todo', JSON.stringify(todoData));
 		});
 
-		li.addEventListener('mouseenter', () => {
-			if(todoBtns.classList.contains('.todo-buttons-swipe')) return;
+		li.addEventListener('mouseenter', (e) => {
+			const target = e.target.closest('.todo-item'),
+				timer = setTimeout(() => {
+				    todoBtns.classList.add('todo-buttons-swipe');
+				}, 1000);
 
-			setTimeout(() => {
-				todoBtns.classList.add('todo-buttons-swipe');
-			}, 500);
-
-			const timer = setTimeout(() => {
-			    todoBtns.classList.add('todo-buttons-swipe');
-
-			    clearTimeout(timer);
-			}, 1000);
+			if(target) {
+				if(timer) {
+					clearInterval(timer);
+					todoBtns.classList.add('todo-buttons-swipe');
+				}
+			}	
 		});
 
-		li.addEventListener('mouseleave', () => {
-			setTimeout(() => {
-				todoBtns.classList.remove('todo-buttons-swipe');
-			}, 1000);
+		li.addEventListener('mouseleave', (e) => {
+			const target = e.target.closest('.todo-item');
+			
+			if(target) {
+				setTimeout(() => {
+					todoBtns.classList.remove('todo-buttons-swipe');
+				}, 1000);
+			}
 		});
 	});
 };
