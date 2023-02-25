@@ -309,44 +309,49 @@ input[type="number"] {
 
 @media (max-width: 24em) {
 	.container {
-		padding-left: 3rem;
-		padding-right: 3rem;
+		padding-left: 4.5rem;
+		padding-right: 4.5rem;
 	}
 
 	.header {
-		padding-top: 3rem;
-		padding-bottom: 8rem;
+		padding-top: 8rem;
+		padding-bottom: 12rem;
 	}
 
 	.header-input {
-		height: 12rem;
+		height: 15rem;
 		padding: 1.5rem 12rem;
-		font-size: 6rem;
+		font-size: 7.5rem;
 		border-radius: 10rem;
 		box-shadow: 0 1rem 2rem rgba(97, 52, 0, .75);
 	}
 
 	.header-button {
-		width: 12rem;
-		height: 12rem;
+		width: 15rem;
+		height: 15rem;
 	}
 
 	.title {
+		width: 49%;
 		font-size: 6rem;
 		margin-bottom: 4rem;
 		text-shadow: 0 2px 2px #FFF2C5, 0 1px 0 #FFFFFF, 0 -.2px 0 rgba(137, 85, 45, .7);
 	}
 
+	.todo {
+		width: 49%;
+	}
+
 	.todo-item {
-		height: 10rem;
-		padding: 2.6rem 12rem 2.6rem 3rem;
-		font-size: 3.6rem;
+		height: 12rem;
+		padding: 2rem 12rem 2rem 3rem;
+		font-size: 5rem;
 		border-radius: 10rem;
 		box-shadow: 0 1rem 2rem rgba(97, 52, 0, .75);
 	}
 
 	.todo-item:not(:last-child) {
-		margin-bottom: 3rem;
+		margin-bottom: 3.5rem;
 	}
 
 	.todo-item:hover {
@@ -358,14 +363,14 @@ input[type="number"] {
 	}
 
 	.todo-remove {
-		width: 8rem;
-		height: 8rem;
+		width: 10rem;
+		height: 10rem;
 		margin-right: 1.5rem;
 	}
 
 	.todo-complete {
-		width: 8rem;
-		height: 8rem;
+		width: 10rem;
+		height: 10rem;
 	}
 
 	.todo-complete > img {
